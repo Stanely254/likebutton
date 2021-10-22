@@ -34,6 +34,10 @@ export default class LikeButton extends Component {
   };
 
   render() {
+    let btnClass = cx({
+      btn: true,
+      "btn-pressed": this.state.liked,
+    });
     return (
       <>
         <div>
@@ -52,7 +56,9 @@ export default class LikeButton extends Component {
                 `}</style>
 
         <button
-          className={`like-button ${this.state.liked ? `liked` : ``}`}
+          className={`like-button ${
+            this.state.liked ? `liked` : ``
+          } ${btnClass}`}
           onClick={this.toggleLike}
         >
           Like | {this.state.likes}
