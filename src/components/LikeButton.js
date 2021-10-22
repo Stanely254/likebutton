@@ -56,9 +56,9 @@ export default class LikeButton extends Component {
                 `}</style>
 
         <button
-          className={`like-button ${
+          className={`${btnClass} like-button ${
             this.state.liked ? `liked` : ``
-          } ${btnClass}`}
+          }`}
           onClick={this.toggleLike}
         >
           Like | {this.state.likes}
